@@ -1,0 +1,68 @@
+create database proyecto taller;
+
+create table clientes(
+dni varchar(20),
+nombre varchar(20),
+apellido varchar(20),
+telefono numeric(7,0),
+direccion varchar(20),
+vehiculos varchar(20),
+CONSTRAINT CLIENTES_PK PRIMARY KEY(DNI)
+);
+
+#Alter table clientes add primary key (dni);
+
+create table vehiculos(
+marca varchar(),
+modelo varchar(),
+id_vehiculo varchar(),
+color varchar(),
+matricula varchar(7)
+combustible varchar()
+);
+
+#Alter table vehiculos add primary key (matricula);
+
+create table reparaciones (
+cliente varchar(9),
+id_averia varchar(9),
+coste  numeric(7,2),
+fecha_ingreso varchar(),
+fecha_final varchar(),
+incidencias varchar(260),
+primary key (id_averia)
+foreing key (cliente) from clientes where 
+);
+
+
+#Alter table reparacionres add primary key (id_averia);
+
+ALTER TABLE reparaciones ADD CONSTRAINT FK1_id  FOREIGN KEY(cliente) REFERENCES clientes(dni)
+ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+#####################################################################################################################################################################################################################################################
+
+
+TRIGGERS 
+
+
+
+CREATE TRIGGER VALIDACION_AI
+before INSERT ON CLIENTES for each row 
+begin 
+	if (new.dni  not like "_________" ) then
+	signal sqlstate '4500'
+	set message_text="No es un dni valido"4;
+	end if;
+	
+	if()
+
+
+
+
+
+
+
+
+
